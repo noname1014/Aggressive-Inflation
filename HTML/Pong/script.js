@@ -7,7 +7,7 @@ var canvas;
 var ctx;
 var canvasWidth = 600;
 var canvasHeight = 400;
- /*
+/*
 var keysDown = {};
 
 window.addEventListener("keydown", function(event) {
@@ -17,12 +17,12 @@ window.addEventListener("keydown", function(event) {
 window.addEventListener("keyup", function(event) {
   delete keysDown[event.keyCode];
 });
+*/
 
 window.onload = function() {
   document.body.appendChild(canvas);
   animate(step);
 };
-*/
 
 var Ball = class {
   constructor() {
