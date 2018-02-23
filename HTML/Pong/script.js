@@ -7,7 +7,7 @@ var canvas;
 var ctx;
 var canvasWidth = 600;
 var canvasHeight = 400;
-
+ /*
 var keysDown = {};
 
 window.addEventListener("keydown", function(event) {
@@ -22,6 +22,7 @@ window.onload = function() {
   document.body.appendChild(canvas);
   animate(step);
 };
+*/
 
 var Ball = class {
   constructor() {
@@ -54,6 +55,7 @@ var Ball = class {
   }
 };
 
+/*
 var Paddle =  class {
   constructor(xPosition) {
     this.width = 20;
@@ -81,6 +83,7 @@ var Paddle =  class {
     }
   }
 }
+*/
 
 canvas=document.createElement("canvas");
 canvas.width = canvasWidth;
@@ -89,7 +92,7 @@ ctx = canvas.getContext("2d");
 document.body.appendChild(canvas);
 
 var BallInstance = new Ball();
-var Paddle1 = new Paddle(20);
+//var Paddle1 = new Paddle(20);
 
 var step = function(){
     init();
@@ -107,6 +110,6 @@ function draw(){
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     BallInstance.draw();
-    Paddle1.draw();
+    //Paddle1.draw();
 };
 function animate(step){};
