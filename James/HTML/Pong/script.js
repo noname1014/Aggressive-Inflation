@@ -77,8 +77,6 @@ var Paddle =  class {
       if(value == 37) {
         if(this.xSpeed>-8){this.xSpeed-=1}
       }
-      else if(value == 39) {
-        if(this.xSpeed);
       }
     }
   }
