@@ -7,7 +7,7 @@ var canvas;
 var ctx;
 var canvasWidth = 600;
 var canvasHeight = 400;
-/*
+
 var keysDown = {};
 
 window.addEventListener("keydown", function(event) {
@@ -17,8 +17,6 @@ window.addEventListener("keydown", function(event) {
 window.addEventListener("keyup", function(event) {
   delete keysDown[event.keyCode];
 });
-*/
-
 window.onload = function() {
   document.body.appendChild(canvas);
   animate(step);
@@ -55,7 +53,7 @@ var Ball = class {
   }
 };
 
-/*
+
 var Paddle =  class {
   constructor(xPosition) {
     this.width = 20;
@@ -67,21 +65,28 @@ var Paddle =  class {
   }
 
   draw(){
-    ctx.fillStyle = white;
+    console.log("Paddle Draw");
+    ctx.fillStyle = "white";
     ctx.fillRect(this.xPos, this.yPos, this.height, this.width);
   }
 
   move(){
     for(var key in keysDown) {
       var value = Number(key);
-      if(value == 37) {
-        if(this.xSpeed>-8){this.xSpeed-=1}
+      if(value == 38) {
+        if(this.ySpeed>-8){this.ySpeed-=1}{
+          this.yPos+= ySpeed
+        }
       }
+      else if(value == 40) {
+        if(this.ySpeed<8){this.ySpeed+=1}{
+          this.yPos += ySpeed
+        }
       }
     }
   }
 }
-*/
+
 
 canvas=document.createElement("canvas");
 canvas.width = canvasWidth;
@@ -90,7 +95,7 @@ ctx = canvas.getContext("2d");
 document.body.appendChild(canvas);
 
 var BallInstance = new Ball();
-//var Paddle1 = new Paddle(20);
+var Paddle1 = new Paddle(20);
 
 var step = function(){
     init();
@@ -103,11 +108,13 @@ function init(){};
     
 function updatePositions(){
     BallInstance.move();
+    Paddle1.move();
 };
 function draw(){
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, canvasWidth, canvasHeight);
     BallInstance.draw();
-    //Paddle1.draw();
+    Paddle1.draw();
 };
+function draw(){};
 function animate(step){};
